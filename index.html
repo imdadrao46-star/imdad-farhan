@@ -1,4 +1,4 @@
-<!doctype html>
+f<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -74,19 +74,31 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
   3) Create Imdad and Farhan users in Firebase Authentication (Add user).
   4) Publish the Firestore rules from firestore.rules.
 */
+const firebaseConfig = {// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyChS9UpwvHE-UNAvBNNumH2363TuKyhVD0",
+  authDomain: "our-daily-tracker.firebaseapp.com",
+  projectId: "our-daily-tracker",
+  storageBucket: "our-daily-tracker.firebasestorage.app",
+  messagingSenderId: "947204837662",
+  appId: "1:947204837662:web:ff8f1859ac3a788425f90f",
+  measurementId: "G-FKRRSXH1ZF"
 };
+
 
 const configReady = !Object.values(firebaseConfig).some(v => String(v).startsWith("PASTE_"));
 const loginView=document.getElementById('loginView'), appView=document.getElementById('appView');
 const loginMsg=document.getElementById('loginMsg'), formMsg=document.getElementById('formMsg');
-let auth, db, currentUser, allEntries=[];
+let auth, db, currentUser// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyChS9UpwvHE-UNAvBNNumH2363TuKyhVD0",
+  authDomain: "our-daily-tracker.firebaseapp.com",
+  projectId: "our-daily-tracker",
+  storageBucket: "our-daily-tracker.firebasestorage.app",
+  messagingSenderId: "947204837662",
+  appId: "1:947204837662:web:ff8f1859ac3a788425f90f",
+  measurementId: "G-FKRRSXH1ZF"
+};, allEntries=[];
 const $=id=>document.getElementById(id);
 function showLogin(message=''){loginView.classList.remove('hidden');appView.classList.add('hidden');$('logoutBtn').classList.add('hidden');loginMsg.textContent=message;}
 function showApp(){loginView.classList.add('hidden');appView.classList.remove('hidden');$('logoutBtn').classList.remove('hidden');$('whoami').textContent=currentUser.email;}
